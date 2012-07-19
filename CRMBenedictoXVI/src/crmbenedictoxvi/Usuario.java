@@ -108,7 +108,19 @@ public class Usuario {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public boolean isMove() {
+        return move;
+    }  
     
+    public void Eliminar(){
+       
+       if (this.move==true){
+           move = false;
+       }else{
+           move=true;
+       }
+    }
+ }
     
-    
-}
+
