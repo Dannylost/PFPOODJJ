@@ -18,5 +18,13 @@ public class AdminUsuario {
     
     }
     
+   
+//    public boolean NotDelete(boolean s){
+//        if(s==false){
+//            return true;
+//        }
+//        return false;
+//    }
+    
     
 }

@@ -1,5 +1,6 @@
 package crmbenedictoxvi;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Usuario {
@@ -27,7 +28,9 @@ public class Usuario {
         this.position = position;
         this.rol = rol;
         this.pass = pass;
+        Eliminar();
     }
+    
 
     public String getCode() {
         return code;
@@ -108,7 +111,17 @@ public class Usuario {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public boolean isMove() {
+        return move;
+    }
     
-    
-    
+   public void Eliminar(){
+       
+       if (this.move==true){
+           move = false;
+       }else{
+           move=true;
+       }
+   }
 }
