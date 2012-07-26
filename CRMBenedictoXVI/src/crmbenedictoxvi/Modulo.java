@@ -9,6 +9,9 @@ public class Modulo {
         this.name = name;
     }
 
+    public Modulo() {
+    }
+
     public int getCod() {
         return cod;
     }

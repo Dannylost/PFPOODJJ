@@ -18,9 +18,9 @@ public class AdminUsuario {
     
     }
     
-    public void loginUser(String user, String pass) {
+    public boolean loginUser(String user, String pass) {
         int cond=0;
-        
+        boolean ind=false;
         if (user.equals("") || pass.equals("")){
             System.out.println("No Ha ingresado Usuario y/o contraseña...");
             //cond=1;
@@ -49,7 +49,7 @@ public class AdminUsuario {
                 //return false;
             }
         }
-          
+          return ind;
     }
     
 }
