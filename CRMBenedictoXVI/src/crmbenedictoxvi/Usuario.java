@@ -92,7 +92,7 @@ public class Usuario {
     public void setSurname1(String surname1) {
         this.surname1 = surname1;
     }
-
+    
     public String getSurname2() {
         return surname2;
     }
