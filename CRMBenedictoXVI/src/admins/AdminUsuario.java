@@ -23,8 +23,7 @@ public class AdminUsuario {
         
         if (user.equals("") || pass.equals("")){
             System.out.println("No Ha ingresado Usuario y/o contraseña...");
-            //cond=1;
-            //return false;
+
         } else {
             tablaDeUsuarios();
             for (int i = 0; i < this.data.size(); i++){
@@ -46,7 +45,7 @@ public class AdminUsuario {
             }
             if (cond == 0){
                 System.out.println("No existe el usuario ingresado...");
-                //return false;
+               
             }
         }
           
