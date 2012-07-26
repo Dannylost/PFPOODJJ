@@ -9,27 +9,9 @@ import org.junit.BeforeClass;
 
 public class AdminUsuarioTest {
     
-    AdminUsuario admin = new AdminUsuario();
     
-    @Test
-    public void testDeLoginValidandoUsuarioYContrasenyaEnLaBD() {
-        String user = "jpereira";
-        String pass = "a1b2c3";
-        
-        admin.loginUser(user, pass);
-        
-    }
     
-    @Test
-    public void testDeLoginValidandoUsuarioYContrasenyaNoNulos() {
-        String user = "";
-        String pass = "";
-        
-        admin.loginUser(user,pass);
-        
-    }
-    
-    String code = "u70480792";
+        String code = "u70480792";
         String name = "Johns";
         String surname1 = "Rivas";
         String surname2 = "Gómez";
@@ -39,89 +21,125 @@ public class AdminUsuarioTest {
         String position = "Ejecutivo de Ventas";
         String rol = "usuario";
         String pass = "loki123";
-        boolean move = false;
+        boolean move = true;
     
     Usuario user = new Usuario(code, name, surname1, surname2, username, mail, date, position, rol, pass);
+    
+    AdminUsuario admUser = new AdminUsuario();
+    
     
     @Test
     public void ValidarQueElCodigoSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getCode());
+        Assert.assertNotSame("Debe ingresar un código","", user.getCode());
     }
     
     @Test
     public void ValidarQueElNombreSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getName());
+        Assert.assertNotSame("Debe ingresar un nombre","", user.getName());
     }
     
     @Test
     public void ValidarQueElApellidoPaternoSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getSurname1());
+        Assert.assertNotSame("Debe ingresar Apellido Materno","", user.getSurname1());
     }
     
     @Test
     public void ValidarQueElApellidoMaternoSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getSurname2());
+        Assert.assertNotSame("Debe ingresar Apellido Materno","", user.getSurname2());
     }
     
     @Test
     public void ValidarQueElNombreDeUsuarioSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getUsername());
+        Assert.assertNotSame("Debe ingresar Nombre de Usuario","", user.getUsername());
     }
     
     @Test
     public void ValidarQueElMailSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getMail());
+        Assert.assertNotSame("Debe ingresar una dirección de correo","", user.getMail());
     }
     
     @Test
     public void ValidarQueLaFechaDeIngresoSeaMandatoria(){
         
-        Assert.assertNotSame("", user.getDate());
+        Assert.assertNotSame("Debe ingresar fecha de ingreso","", user.getDate());
     }
     
     @Test
     public void ValidarQueLaPosiciónSeaMandatoria(){
         
-        Assert.assertNotSame("", user.getPosition());
+        Assert.assertNotSame("Debe ingresar el cargo que tiene el usuario","", user.getPosition());
     }
     
     @Test
     public void ValidarQueElRolSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getRol());
+        Assert.assertNotSame("Debe ingresar el rol del usuario","", user.getRol());
     }
     
     @Test
     public void ValidarQueElPasswordSeaMandatorio(){
         
-        Assert.assertNotSame("", user.getPass());
+        Assert.assertNotSame("El password no debe estar en blanco","", user.getPass());
     }
     
     @Test
     public void ValidarQueElUsuarioNoSePuedaEliminarSiYaHaRealizadoAlgunaTransaccion(){
+        //Si move es igual a True quiere decir que el usuario ha hecho transacciones.
+        //por tanto no puede ser eliminado
+        boolean validar = admUser.validarEliminar(true);
+        Assert.assertEquals(false, validar);
+    }
+    
+    @Test
+    public void ValidarElFuncionamientoBotonAgregar(){
+        int validar = admUser.agregarUsuario("70480791", "Alonso", "Jaime", "Gómez", "ajaime", "ajaime@gmail.com", "25/07/2012", "Finanzas", "UsuarioComun", "admin1234");
+        Assert.assertEquals(0, validar);
         
-        Assert.assertEquals(true, user.isMove());
+    }
+    
+    @Test
+    public void ValidarElFuncionamientoDelBotonBuscarPorCodigo(){
+        String validar = admUser.buscarUsuariosPorCode("70480792");
+        System.out.println(validar);
+        Assert.assertEquals("70480792", validar);
         
+    }
+    
+    @Test
+    public void ValidarElFuncionamientoDelBotonBuscarporNombre(){
+        String validar = admUser.buscarUsuariosPorNombre("eddie");
+        System.out.println(validar);
+        Assert.assertEquals("Eddie", validar);
         
-//        if(user.isMove()==true){
-//            System.out.println("El usuario no puede ser eliminado");
-//        }else{
-//            System.out.println("Usuario eliminado");
-//        }
+    }
+    
+    @Test
+    public void ValidarQueElNombreDeUsuarioEsteDisponible(){
+        int validar = admUser.ValidarUserName("ajaimeg");
+        Assert.assertEquals(0, validar);
         
-        //Assert.assertNotSame("", user.getName());
+    }
+    
+    @Test
+    public void ValidarQueElUsuarioRequeridoHaSidoEliminado(){
+        int validar = admUser.eliminarUsuario("70480792");
+        Assert.assertEquals(1, validar);
+        
     }
     
 //    @Test
-//    public void ValidarQueElBotonAgregarSoloRealizaEstaAccionCuandoTodosLosCamposSonLlenados(){
+//    public void ValidarEdicionDeDatos(){
+//        String validar = admUser.buscarUsuariosPorCode("70480792");
+//        admUser = admUser.editarUsuario("nombre","Raul");
 //        
 //        
 //    }
-    
 }
+        
+
