@@ -1,13 +1,13 @@
 package crmbenedictoxvi;
 
-public class Permisos {
+public class Permiso {
     private boolean Acceso;
     private boolean Adicionar;
     private boolean Editar;
     private boolean Eliminar;
     private Modulo modulo;
 
-    public Permisos(Modulo modulo, boolean Acceso, boolean Adicionar, boolean Editar, boolean Eliminar) {
+    public Permiso(Modulo modulo, boolean Acceso, boolean Adicionar, boolean Editar, boolean Eliminar) {
         this.Acceso = Acceso;
         this.Adicionar = Adicionar;
         this.Editar = Editar;

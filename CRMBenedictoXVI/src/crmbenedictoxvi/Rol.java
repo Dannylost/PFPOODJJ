@@ -4,9 +4,12 @@ public class Rol {
     
     private String nombre;
     private String desc;
-    private Permisos perm;
+    private Permiso perm;
 
-    public Rol(String nombre, String desc, Permisos perm) {
+    public Rol() {
+    }
+
+    public Rol(String nombre, String desc, Permiso perm) {
         this.nombre = nombre;
         this.desc = desc;
         this.perm = perm;
@@ -28,11 +31,11 @@ public class Rol {
         this.nombre = nombre;
     }
 
-    public Permisos getPerm() {
+    public Permiso getPerm() {
         return perm;
     }
 
-    public void setPerm(Permisos perm) {
+    public void setPerm(Permiso perm) {
         this.perm = perm;
     }
     

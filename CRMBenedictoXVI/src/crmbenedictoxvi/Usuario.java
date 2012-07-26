@@ -113,14 +113,6 @@ public class Usuario {
         return move;
     }  
     
-    public void Eliminar(){
-       
-       if (this.move==true){
-           move = false;
-       }else{
-           move=true;
-       }
-    }
  }
     
 

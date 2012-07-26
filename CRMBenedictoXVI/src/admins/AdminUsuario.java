@@ -80,6 +80,7 @@ public class AdminUsuario {
         }
         return resultBusqueda;
     }
+
     
     public String buscarUsuariosPorNombre(String name){
         String cadena;
@@ -109,6 +110,11 @@ public class AdminUsuario {
         }
         return resultBusqueda;
     }
+
+//    public boolean isResultado() {
+//        return resultado;
+//    }
+    
     
     public int ValidarUserName(String username){
         int condicion = 0;
@@ -229,9 +235,5 @@ public class AdminUsuario {
         }
           
     }
-    
 }
-    
-
-    
 
