@@ -2,10 +2,8 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/C:/Users/Dannylost/PFPOODJJ/CRMBenedictoXVI/src/crmbenedictoxvi/Rol.java</file>
-        <file>file:/C:/Users/Dannylost/PFPOODJJ/CRMBenedictoXVI/src/crmbenedictoxvi/Permisos.java</file>
-        <file>file:/C:/Users/Dannylost/PFPOODJJ/CRMBenedictoXVI/src/admins/AdminRol.java</file>
-        <file>file:/C:/Users/Dannylost/PFPOODJJ/CRMBenedictoXVI/test/admins/AdminRolTest.java</file>
-        <file>file:/C:/Users/Dannylost/PFPOODJJ/CRMBenedictoXVI/test/admins/AdminUsuarioTest.java</file>
+        <file>file:/D:/PROYECTO_POO/PFPOODJJ/CRMBenedictoXVI/src/crmbenedictoxvi/Usuario.java</file>
+        <file>file:/D:/PROYECTO_POO/PFPOODJJ/CRMBenedictoXVI/src/admins/AdminUsuario.java</file>
+        <file>file:/D:/PROYECTO_POO/PFPOODJJ/CRMBenedictoXVI/test/admins/AdminUsuarioTest.java</file>
     </open-files>
 </project-private>
