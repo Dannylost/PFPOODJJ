@@ -16,10 +16,11 @@ public class AdminUsuario {
     }
     
     
-    private void tablaDeUsuarios() {
+    public ArrayList<Usuario> tablaDeUsuarios() {
         this.data.add(new Usuario("45434413", "Jorge", "Pereira", "Lopez", "jpereira", "jpereira@upc.com", "12/04/2012", "Asistente de RRHH", "usuario", "a1b2c3"));
         this.data.add(new Usuario("13307922", "Helen", "Alva", "Marquez", "halva", "halva@upc.com", "24/05/2012", "Analista de RRHH", "usuario", "123456"));
         this.data.add(new Usuario("70480792", "Eddie", "Jaime", "Diaz", "ejaimed", "ejaimed@gmail.com", "25/07/2012", "Ventas", "UsuarioComun", "qwer1234"));
+        return data;
     }
 
     public boolean isResultado() {
@@ -170,6 +171,45 @@ public class AdminUsuario {
         }
            
         return condicion;
+    }
+    
+    
+    public String editarUsuario(String code, String name, String surname1, String surname2, String username, String mail, String date, String position, String rol, String pass) {
+        Usuario user = null;
+        ArrayList<Usuario> dbUsuario = tablaDeUsuarios();
+        String result="";
+        int index=0;
+        for (int i = 0; i < dbUsuario.size() ; i++){
+            if(dbUsuario.get(i).getCode().equalsIgnoreCase(code)){
+                user = dbUsuario.get(i);
+                index = dbUsuario.indexOf(user);
+                user.setName(name);
+                user.setSurname1(surname1);
+                user.setSurname2(surname2);
+                user.setUsername(username);
+                user.setMail(mail);
+                user.setDate(date);
+                user.setPosition(position);
+                user.setRol(rol);
+                user.setPass(pass);
+                 
+            } 
+        }
+        if (user!=null){
+            result+="El Usuario ha sido modificado correctamente: "+"\nNombre "+user.getName();
+            result+="\nApellido Paterno: "+user.getSurname1();
+            result+="\nApellido Materno: "+user.getSurname2();
+            result+="\nUsername: "+user.getUsername();
+            result+="\nCorreo: "+user.getMail();
+            result+="\nFecha: "+user.getDate();
+            result+="\nPosicion: "+user.getPosition();
+            result+="\nRol: "+user.getRol();
+            result+="\nPassword: "+user.getPass();
+            dbUsuario.add(index, user);
+        }else {
+            result="No existe el rol ingresado: "+name;
+        }
+        return result;
     }
     
 //    public String Editar(String tipo,String cambiar, String code){

@@ -133,13 +133,13 @@ public class AdminUsuarioTest {
         
     }
     
-//    @Test
-//    public void ValidarEdicionDeDatos(){
-//        String validar = admUser.buscarUsuariosPorCode("70480792");
-//        admUser = admUser.editarUsuario("nombre","Raul");
-//        
-//        
-//    }
+    @Test
+    public void ValidarEdicionDeDatos(){
+        String validar = admUser.editarUsuario("70480792", "PRUEBAAAA", "Jaime", "Gonzales", "ejaimed", "ejaimed@gmail.com", "25/07/2012", "Ventas", "UsuarioComun", "qwer1234");
+        
+        Assert.assertNotNull(validar);
+        System.out.println(validar);
+    }
 }
         
 
